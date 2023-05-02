@@ -1,11 +1,11 @@
 package re.dnl.katas.bowling_kata.frames;
 
-import re.dnl.katas.bowling_kata.score_calculators.FrameScoreCalculator;
 import re.dnl.katas.bowling_kata.score_calculators.OpenFrameScoreCalculator;
 
 public class OpenFrame extends Frame {
 
     public OpenFrame(final int firstThrow, final int secondThrow) {
+        super(new OpenFrameScoreCalculator());
         if (firstThrow >= 10 || secondThrow >= 10) {
             throw new IllegalArgumentException("An open frame does not allow throws greater or equal to 10");
         }
@@ -24,10 +24,5 @@ public class OpenFrame extends Frame {
 
         this.firstThrow = firstThrow;
         this.secondThrow = secondThrow;
-    }
-
-    @Override
-    public FrameScoreCalculator getFrameCalculator() {
-        return new OpenFrameScoreCalculator();
     }
 }

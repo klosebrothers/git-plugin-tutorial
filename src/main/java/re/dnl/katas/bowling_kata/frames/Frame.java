@@ -5,6 +5,11 @@ import re.dnl.katas.bowling_kata.score_calculators.FrameScoreCalculator;
 public abstract class Frame {
     int firstThrow;
     int secondThrow;
+    final FrameScoreCalculator frameScoreCalculator;
+
+    protected Frame(final FrameScoreCalculator frameScoreCalculator) {
+        this.frameScoreCalculator = frameScoreCalculator;
+    }
 
     public int getFirstThrow() {
         return firstThrow;
@@ -14,5 +19,7 @@ public abstract class Frame {
         return secondThrow;
     }
 
-    public abstract FrameScoreCalculator getFrameCalculator();
+    public FrameScoreCalculator getScoreCalculator() {
+        return this.frameScoreCalculator;
+    }
 }
