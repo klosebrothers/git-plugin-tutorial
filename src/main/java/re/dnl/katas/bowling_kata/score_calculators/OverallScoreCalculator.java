@@ -26,13 +26,7 @@ public class OverallScoreCalculator {
             } else if (frame instanceof SpareFrame) {
                 overallScore += SpareFrameScoreCalculator.calculateScore((SpareFrame) frame, nextFrame);
             } else if (frame instanceof StrikeFrame) {
-
-                if (nextFrame instanceof StrikeFrame) {
-                    overallScore += StrikeFrameScoreCalculator.calculateScore((StrikeFrame) frame, (StrikeFrame) nextFrame,
-                                                                              frameAfterNextFrame);
-                } else {
-                    overallScore += StrikeFrameScoreCalculator.calculateScore((StrikeFrame) frame, nextFrame);
-                }
+                overallScore += StrikeFrameScoreCalculator.calculateScore((StrikeFrame) frame, nextFrame, frameAfterNextFrame);
             } else if (frame instanceof TenthFrame) {
                 overallScore += TenthFrameScoreCalculator.calculateScore((TenthFrame) frame);
             } else if (frame instanceof EmptyFrame) {
