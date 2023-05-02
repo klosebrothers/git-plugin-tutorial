@@ -17,14 +17,6 @@ class OpenFrameTest {
     }
 
     @Test
-    void shouldReturnScoreByCountingUpBothThrows() {
-
-        OpenFrame openFrame = new OpenFrame(1, 1);
-
-        assertThat(openFrame.getScore()).isEqualTo(2);
-    }
-
-    @Test
     void shouldReturnErrorIfOneOfTheThrowsIsAbove10() {
 
         assertThrows(IllegalArgumentException.class, () -> new OpenFrame(10, 0));

@@ -8,7 +8,7 @@ class BonusFrameTest {
 
     @Test
     void shouldHaveAtLeastOneThrow() {
-        BonusFrame bonusFrame = new BonusFrame(1);
+        BonusFrame bonusFrame = new BonusFrame(1, 0);
 
         assertThat(bonusFrame.firstThrow).isEqualTo(1);
     }

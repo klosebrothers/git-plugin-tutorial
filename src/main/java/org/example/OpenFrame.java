@@ -23,8 +23,4 @@ public class OpenFrame extends Frame {
         this.secondThrow = secondThrow;
     }
 
-    @Override
-    public int getScore(final Frame... nextFrames) {
-        return firstThrow + secondThrow;
-    }
 }

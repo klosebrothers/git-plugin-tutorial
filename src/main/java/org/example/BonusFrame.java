@@ -2,12 +2,8 @@ package org.example;
 
 public class BonusFrame extends Frame {
 
-    public BonusFrame(final int firstThrow) {
+    public BonusFrame(final int firstThrow, final int secondThrow) {
         this.firstThrow = firstThrow;
-    }
-
-    @Override
-    public int getScore(final Frame... nextFrames) {
-        return 0;
+        this.secondThrow = secondThrow;
     }
 }
