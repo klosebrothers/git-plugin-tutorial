@@ -1,6 +1,6 @@
 package org.example;
 
-public class StrikeFrame implements Frame {
+public class StrikeFrame extends Frame {
     public static final int STATIC_STRIKE_SCORE = 10;
     public static final int STATIC_SPARE_SCORE = 10;
     private final Frame nextFrame;
@@ -25,9 +25,11 @@ public class StrikeFrame implements Frame {
 
             if (((StrikeFrame) nextFrame).nextFrame instanceof OpenFrame) {
                 return STATIC_STRIKE_SCORE + STATIC_STRIKE_SCORE
-                       + ((OpenFrame) ((StrikeFrame) nextFrame).nextFrame).firstThrow;
+                       + ((StrikeFrame) nextFrame).nextFrame.firstThrow;
             } else if (((StrikeFrame) nextFrame).nextFrame instanceof EmptyFrame) {
                 return STATIC_STRIKE_SCORE + STATIC_STRIKE_SCORE;
+            } else if (((StrikeFrame) nextFrame).nextFrame instanceof SpareFrame) {
+                return STATIC_STRIKE_SCORE + STATIC_STRIKE_SCORE + ((StrikeFrame) nextFrame).nextFrame.firstThrow;
             } else {
                 return 0;
             }

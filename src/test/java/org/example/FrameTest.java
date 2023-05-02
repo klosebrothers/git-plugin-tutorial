@@ -25,7 +25,7 @@ class FrameTest {
     @Test
     void shouldBeAbleToBeASpareFrame() {
 
-        Frame frame = new SpareFrame(new EmptyFrame());
+        Frame frame = new SpareFrame(1,9,new EmptyFrame());
 
         assertThat(frame).isInstanceOf(SpareFrame.class);
     }

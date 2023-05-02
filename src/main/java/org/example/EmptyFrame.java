@@ -1,7 +1,6 @@
 package org.example;
 
-public class EmptyFrame implements Frame {
-    @Override
+public class EmptyFrame extends Frame {
     public int getScore() {
         return 0;
     }

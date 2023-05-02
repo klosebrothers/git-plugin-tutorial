@@ -15,7 +15,7 @@ class StrikeFrameTest {
 
     @Test
     void shouldReturnScoreWithScoreOfFollowingSpareFrame() {
-        StrikeFrame strikeFrame = new StrikeFrame(new SpareFrame(new OpenFrame(2,2)));
+        StrikeFrame strikeFrame = new StrikeFrame(new SpareFrame(1,9,new OpenFrame(2,2)));
 
         assertThat(strikeFrame.getScore()).isEqualTo(20);
     }
@@ -36,8 +36,8 @@ class StrikeFrameTest {
 
     @Test
     void shouldReturnScoreWithScoreOfFollowingStrikeFrameAndFollowingSpareFrame() {
-        StrikeFrame strikeFrame = new StrikeFrame(new StrikeFrame(new SpareFrame(new EmptyFrame())));
+        StrikeFrame strikeFrame = new StrikeFrame(new StrikeFrame(new SpareFrame(1,9, new EmptyFrame())));
 
-        assertThat(strikeFrame.getScore()).isEqualTo(-1); // at this stage I have neglected storing the throws in the spare frame
+        assertThat(strikeFrame.getScore()).isEqualTo(21);
     }
 }

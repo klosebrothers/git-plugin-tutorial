@@ -1,5 +1,8 @@
 package org.example;
 
-public interface Frame {
-    int getScore();
+public abstract class Frame {
+    int firstThrow;
+    int secondThrow;
+
+    public abstract int getScore();
 }

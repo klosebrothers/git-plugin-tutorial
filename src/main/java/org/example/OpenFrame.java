@@ -1,9 +1,6 @@
 package org.example;
 
-public class OpenFrame implements Frame {
-
-    final int firstThrow;
-    final int secondThrow;
+public class OpenFrame extends Frame {
 
     public OpenFrame(final int firstThrow, final int secondThrow) {
         if (firstThrow >= 10 || secondThrow >= 10) {
@@ -21,7 +18,6 @@ public class OpenFrame implements Frame {
         if (firstThrow + secondThrow > 10) {
             throw new IllegalArgumentException("The sum of this frame is bigger than ten. That is unheard of!");
         }
-
 
         this.firstThrow = firstThrow;
         this.secondThrow = secondThrow;

@@ -1,15 +1,18 @@
 package org.example;
 
-public class SpareFrame implements Frame {
+public class SpareFrame extends Frame {
     public static final int STATIC_SPARE_SCORE = 10;
     public static final int STATIC_STRIKE_SCORE = 10;
     private final Frame nextFrame;
 
-    public SpareFrame(final Frame nextFrame) {
+    public SpareFrame(final int firstThrow, final int secondThrow, final Frame nextFrame) {
 
         if (nextFrame == null) {
             throw new IllegalArgumentException("Next frame of spare may not be null");
         }
+
+        this.firstThrow = firstThrow;
+        this.secondThrow = secondThrow;
 
         this.nextFrame = nextFrame;
     }
