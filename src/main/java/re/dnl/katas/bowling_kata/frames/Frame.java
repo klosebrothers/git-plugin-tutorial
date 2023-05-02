@@ -19,7 +19,36 @@ public abstract class Frame {
         return secondThrow;
     }
 
-    public FrameScoreCalculator getScoreCalculator() {
-        return this.frameScoreCalculator;
+    public int calculateScore(Frame frame, Frame firstNextFrame, Frame secondNextFrame) {
+        return this.frameScoreCalculator.calculateScore(frame, firstNextFrame, secondNextFrame);
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        final Frame frame = (Frame) o;
+
+        if (firstThrow != frame.firstThrow) {
+            return false;
+        }
+        return secondThrow == frame.secondThrow;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = firstThrow;
+        result = 31 * result + secondThrow;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "First throw: " + firstThrow +"; Second throw: " + secondThrow;
     }
 }

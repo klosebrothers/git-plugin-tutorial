@@ -17,8 +17,7 @@ public class OverallScoreCalculator {
             final Frame nextFrame = getNextOrEmptyFrame(frames, index, framesSize);
             final Frame frameAfterNextFrame = getFrameAfterNextOrEmptyFrame(frames, index, framesSize);
 
-            overallScore += currentFrame.getScoreCalculator().calculateScore(currentFrame, nextFrame,
-                                                                             frameAfterNextFrame);
+            overallScore += currentFrame.calculateScore(currentFrame, nextFrame, frameAfterNextFrame);
         }
 
         return overallScore;
