@@ -24,11 +24,15 @@ public class OverallScoreCalculator {
         return overallScore;
     }
 
-    private Frame getFrameAfterNextOrEmptyFrame(final List<Frame> frames, final int index, final int framesSize) {
-        return (index + 2) < framesSize ? frames.get(index + 2) : new EmptyFrame();
+    private Frame getNextOrEmptyFrame(final List<Frame> frames, final int index, final int framesSize) {
+        int indexOfNextFrame = index + 1;
+        boolean nextFrameIsInFramesArray = indexOfNextFrame < framesSize;
+        return nextFrameIsInFramesArray ? frames.get(indexOfNextFrame) : new EmptyFrame();
     }
 
-    private Frame getNextOrEmptyFrame(final List<Frame> frames, final int index, final int framesSize) {
-        return (index + 1) < framesSize ? frames.get(index + 1) : new EmptyFrame();
+    private Frame getFrameAfterNextOrEmptyFrame(final List<Frame> frames, final int index, final int framesSize) {
+        int indexOfFrameAfterNextFrame = index + 2;
+        boolean frameAfterNextIsInFramesArray = indexOfFrameAfterNextFrame < framesSize;
+        return frameAfterNextIsInFramesArray ? frames.get(indexOfFrameAfterNextFrame) : new EmptyFrame();
     }
 }
