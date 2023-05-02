@@ -33,4 +33,9 @@ public class SpareFrame extends Frame {
             return 0;
         }
     }
+
+    @Override
+    public int getScore(final Frame... nextFrames) {
+        return getScore();
+    }
 }

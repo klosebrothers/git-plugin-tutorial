@@ -37,7 +37,7 @@ class SpareFrameTest {
 
     @Test
     void shouldReturnScoreWithFollowingStrikeFrame() {
-        SpareFrame spareFrame = new SpareFrame(1,9,new StrikeFrame(new OpenFrame(0,0)));
+        SpareFrame spareFrame = new SpareFrame(1,9,new StrikeFrame());
 
         assertThat(spareFrame.getScore()).isEqualTo(20);
     }

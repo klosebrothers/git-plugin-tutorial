@@ -1,7 +1,9 @@
 package org.example;
 
 public class EmptyFrame extends Frame {
-    public int getScore() {
+
+    @Override
+    public int getScore(final Frame... nextFrames) {
         return 0;
     }
 }

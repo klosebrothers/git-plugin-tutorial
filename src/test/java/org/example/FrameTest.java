@@ -17,7 +17,7 @@ class FrameTest {
     @Test
     void shouldBeAbleToBeAStrikeFrame() {
 
-        Frame frame = new StrikeFrame(new EmptyFrame());
+        Frame frame = new StrikeFrame();
 
         assertThat(frame).isInstanceOf(StrikeFrame.class);
     }

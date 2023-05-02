@@ -6,7 +6,8 @@ public class BonusFrame extends Frame {
         this.firstThrow = firstThrow;
     }
 
-    public int getScore() {
+    @Override
+    public int getScore(final Frame... nextFrames) {
         return 0;
     }
 }
