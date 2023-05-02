@@ -7,7 +7,13 @@ import re.dnl.katas.bowling_kata.frames.Frame;
 
 public class Game {
 
+    List<Frame> frames = new ArrayList<>();
+
     public List<Frame> getFrames() {
-        return new ArrayList<>();
+        return frames;
+    }
+
+    public void setFrames(final List<Frame> frames) {
+        this.frames = frames;
     }
 }

@@ -4,6 +4,10 @@ public class TenthFrame extends Frame {
 
     public final int thirdThrow;
 
+    public int getThirdThrow() {
+        return thirdThrow;
+    }
+
     public TenthFrame(final OpenFrame openFrame) {
         this.firstThrow = openFrame.getFirstThrow();
         this.secondThrow = openFrame.getSecondThrow();

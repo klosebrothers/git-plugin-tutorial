@@ -12,6 +12,6 @@ class TenthFrameTest {
 
         assertThat(tenthFrame.getFirstThrow()).isEqualTo(0);
         assertThat(tenthFrame.getSecondThrow()).isEqualTo(0);
-        assertThat(tenthFrame.thirdThrow).isEqualTo(0);
+        assertThat(tenthFrame.getThirdThrow()).isEqualTo(0);
     }
 }

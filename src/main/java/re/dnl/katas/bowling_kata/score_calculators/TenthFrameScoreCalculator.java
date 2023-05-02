@@ -4,6 +4,6 @@ import re.dnl.katas.bowling_kata.frames.TenthFrame;
 
 public class TenthFrameScoreCalculator {
     public static int calculateScore(final TenthFrame tenthFrame) {
-        return tenthFrame.getFirstThrow() + tenthFrame.getSecondThrow() + tenthFrame.thirdThrow;
+        return tenthFrame.getFirstThrow() + tenthFrame.getSecondThrow() + tenthFrame.getThirdThrow();
     }
 }
