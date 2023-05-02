@@ -10,8 +10,8 @@ class TenthFrameTest {
     void shouldHaveThreeThrows() {
         TenthFrame tenthFrame = new TenthFrame(new EmptyFrame());
 
-        assertThat(tenthFrame.firstThrow).isEqualTo(0);
-        assertThat(tenthFrame.secondThrow).isEqualTo(0);
+        assertThat(tenthFrame.getFirstThrow()).isEqualTo(0);
+        assertThat(tenthFrame.getSecondThrow()).isEqualTo(0);
         assertThat(tenthFrame.thirdThrow).isEqualTo(0);
     }
 }

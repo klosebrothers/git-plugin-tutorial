@@ -1,5 +1,11 @@
-package org.example;
+package org.example.score_calculators;
 
+import org.example.EmptyFrame;
+import org.example.OpenFrame;
+import org.example.SpareFrame;
+import org.example.StrikeFrame;
+import org.example.TenthFrame;
+import org.example.score_calculators.SpareFrameScoreCalculator;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -49,7 +55,7 @@ class SpareFrameScoreCalculatorTest {
 
     @Test
     void shouldReturnScoreWithFollowingTenthFrame() {
-        TenthFrame nextFrame = new TenthFrame(new OpenFrame(1,0));
+        TenthFrame nextFrame = new TenthFrame(new OpenFrame(1, 0));
         SpareFrame spareFrame = new SpareFrame(1, 9);
 
         assertThat(SpareFrameScoreCalculator.calculateScore(spareFrame, nextFrame)).isEqualTo(11);

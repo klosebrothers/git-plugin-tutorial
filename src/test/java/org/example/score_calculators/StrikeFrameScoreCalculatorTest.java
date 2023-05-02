@@ -1,9 +1,14 @@
-package org.example;
+package org.example.score_calculators;
 
+import org.example.EmptyFrame;
+import org.example.OpenFrame;
+import org.example.SpareFrame;
+import org.example.StrikeFrame;
+import org.example.TenthFrame;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.example.StrikeFrameScoreCalculator.calculateScore;
+import static org.example.score_calculators.StrikeFrameScoreCalculator.calculateScore;
 
 class StrikeFrameScoreCalculatorTest {
 

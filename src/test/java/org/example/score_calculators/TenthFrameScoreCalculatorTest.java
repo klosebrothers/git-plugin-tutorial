@@ -1,5 +1,9 @@
-package org.example;
+package org.example.score_calculators;
 
+import org.example.OpenFrame;
+import org.example.SpareFrame;
+import org.example.StrikeFrame;
+import org.example.TenthFrame;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,7 +13,7 @@ public class TenthFrameScoreCalculatorTest {
     @Test
     void shouldScoreAnOpenFrame() {
 
-        TenthFrame tenthFrame = new TenthFrame(new OpenFrame(1,1));
+        TenthFrame tenthFrame = new TenthFrame(new OpenFrame(1, 1));
 
         assertThat(TenthFrameScoreCalculator.calculateScore(tenthFrame)).isEqualTo(2);
     }
@@ -17,7 +21,7 @@ public class TenthFrameScoreCalculatorTest {
     @Test
     void shouldScoreAStrikeFrameWithBonusThrowBeingAnOpenFrame() {
 
-        TenthFrame tenthFrame = new TenthFrame(new StrikeFrame(), new OpenFrame(2,3));
+        TenthFrame tenthFrame = new TenthFrame(new StrikeFrame(), new OpenFrame(2, 3));
 
         assertThat(TenthFrameScoreCalculator.calculateScore(tenthFrame)).isEqualTo(15);
     }
@@ -41,7 +45,7 @@ public class TenthFrameScoreCalculatorTest {
     @Test
     void shouldScoreAStrikeFrameWithBonusThrowBeingASpare() {
 
-        TenthFrame tenthFrame = new TenthFrame(new StrikeFrame(), new SpareFrame(2,8));
+        TenthFrame tenthFrame = new TenthFrame(new StrikeFrame(), new SpareFrame(2, 8));
 
         assertThat(TenthFrameScoreCalculator.calculateScore(tenthFrame)).isEqualTo(20);
     }
@@ -49,7 +53,7 @@ public class TenthFrameScoreCalculatorTest {
     @Test
     void shouldScoreASpareFrameWithBonusThrow() {
 
-        TenthFrame tenthFrame = new TenthFrame(new SpareFrame(1,9), 3);
+        TenthFrame tenthFrame = new TenthFrame(new SpareFrame(1, 9), 3);
 
         assertThat(TenthFrameScoreCalculator.calculateScore(tenthFrame)).isEqualTo(13);
     }
@@ -57,7 +61,7 @@ public class TenthFrameScoreCalculatorTest {
     @Test
     void shouldScoreASpareFrameWithBonusThrowBeingAStrike() {
 
-        TenthFrame tenthFrame = new TenthFrame(new SpareFrame(1,9), new StrikeFrame());
+        TenthFrame tenthFrame = new TenthFrame(new SpareFrame(1, 9), new StrikeFrame());
 
         assertThat(TenthFrameScoreCalculator.calculateScore(tenthFrame)).isEqualTo(20);
     }

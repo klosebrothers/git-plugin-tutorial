@@ -12,8 +12,8 @@ class OpenFrameTest {
 
         OpenFrame openFrame = new OpenFrame(1, 1);
 
-        assertThat(openFrame.firstThrow).isNotNull();
-        assertThat(openFrame.secondThrow).isNotNull();
+        assertThat(openFrame.getFirstThrow()).isNotNull();
+        assertThat(openFrame.getSecondThrow()).isNotNull();
     }
 
     @Test

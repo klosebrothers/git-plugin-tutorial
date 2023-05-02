@@ -1,5 +1,7 @@
-package org.example;
+package org.example.score_calculators;
 
+import org.example.OpenFrame;
+import org.example.score_calculators.OpenFrameScoreCalculator;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
