@@ -29,7 +29,7 @@ class OverallScoreCalculatorTest {
                 new EmptyFrame(),
                 new EmptyFrame(),
                 new EmptyFrame(),
-                new EmptyFrame()
+                new TenthFrame(new EmptyFrame())
                               ));
         OverallScoreCalculator overallScoreCalculator = new OverallScoreCalculator();
 
@@ -50,7 +50,7 @@ class OverallScoreCalculatorTest {
                 new EmptyFrame(),
                 new EmptyFrame(),
                 new EmptyFrame(),
-                new EmptyFrame()
+                new TenthFrame(new EmptyFrame())
                                                       ));
     }
 
@@ -66,7 +66,7 @@ class OverallScoreCalculatorTest {
                 new OpenFrame(0, 7),
                 new OpenFrame(3, 3),
                 new OpenFrame(2, 2),
-                new OpenFrame(1, 1)
+                new TenthFrame(new OpenFrame(1,1))
                                                        ));
     }
 
@@ -82,7 +82,7 @@ class OverallScoreCalculatorTest {
                 new EmptyFrame(),
                 new EmptyFrame(),
                 new EmptyFrame(),
-                new EmptyFrame()
+                new TenthFrame(new EmptyFrame())
                                                        ));
     }
 
@@ -98,7 +98,7 @@ class OverallScoreCalculatorTest {
                 new EmptyFrame(),
                 new EmptyFrame(),
                 new SpareFrame(1, 9),
-                new OpenFrame(1, 0)
+                new TenthFrame(new OpenFrame(1,0))
                                                        ));
     }
 
@@ -114,7 +114,7 @@ class OverallScoreCalculatorTest {
                 new EmptyFrame(),
                 new EmptyFrame(),
                 new EmptyFrame(),
-                new EmptyFrame()
+                new TenthFrame(new EmptyFrame())
                                                        ));
     }
 
@@ -129,7 +129,7 @@ class OverallScoreCalculatorTest {
                 new EmptyFrame(),
                 new EmptyFrame(),
                 new EmptyFrame(),
-                new EmptyFrame()
+                new TenthFrame(new EmptyFrame())
                                                        ));
     }
 
@@ -145,7 +145,7 @@ class OverallScoreCalculatorTest {
                 new StrikeFrame(),
                 new EmptyFrame(),
                 new EmptyFrame(),
-                new EmptyFrame()
+                new TenthFrame(new EmptyFrame())
                                                        ));
     }
 
@@ -160,7 +160,7 @@ class OverallScoreCalculatorTest {
                 new StrikeFrame(),
                 new EmptyFrame(),
                 new EmptyFrame(),
-                new EmptyFrame()
+                new TenthFrame(new EmptyFrame())
                                                        ));
     }
 
@@ -175,7 +175,7 @@ class OverallScoreCalculatorTest {
                 new StrikeFrame(),
                 new StrikeFrame(),
                 new EmptyFrame(),
-                new EmptyFrame()
+                new TenthFrame(new EmptyFrame())
                                                        ));
     }
 
