@@ -1,5 +1,11 @@
-package org.example;
+package org.example.frames;
 
+import org.example.frames.EmptyFrame;
+import org.example.frames.Frame;
+import org.example.frames.OpenFrame;
+import org.example.frames.SpareFrame;
+import org.example.frames.StrikeFrame;
+import org.example.frames.TenthFrame;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -25,7 +31,7 @@ class FrameTest {
     @Test
     void shouldBeAbleToBeASpareFrame() {
 
-        Frame frame = new SpareFrame(1,9);
+        Frame frame = new SpareFrame(1, 9);
 
         assertThat(frame).isInstanceOf(SpareFrame.class);
     }

@@ -1,6 +1,6 @@
 package org.example.score_calculators;
 
-import org.example.OpenFrame;
+import org.example.frames.OpenFrame;
 
 public class OpenFrameScoreCalculator {
 

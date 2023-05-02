@@ -1,6 +1,6 @@
 package org.example.score_calculators;
 
-import org.example.EmptyFrame;
+import org.example.frames.EmptyFrame;
 
 public class EmptyFrameScoreCalculator {
     public static int calculateScore(final EmptyFrame emptyFrame) {

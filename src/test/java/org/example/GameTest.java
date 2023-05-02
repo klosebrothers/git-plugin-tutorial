@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.List;
 
+import org.example.frames.Frame;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -23,5 +24,4 @@ class GameTest {
 
         assertThat(frames).isEmpty();
     }
-
 }

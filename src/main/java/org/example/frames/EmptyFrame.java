@@ -1,4 +1,4 @@
-package org.example;
+package org.example.frames;
 
 public class EmptyFrame extends Frame {
     public EmptyFrame() {

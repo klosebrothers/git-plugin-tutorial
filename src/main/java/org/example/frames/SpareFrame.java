@@ -1,4 +1,4 @@
-package org.example;
+package org.example.frames;
 
 public class SpareFrame extends Frame {
     public SpareFrame(final int firstThrow, final int secondThrow) {

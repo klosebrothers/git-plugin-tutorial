@@ -1,6 +1,6 @@
 package org.example.score_calculators;
 
-import org.example.TenthFrame;
+import org.example.frames.TenthFrame;
 
 public class TenthFrameScoreCalculator {
     public static int calculateScore(final TenthFrame tenthFrame) {

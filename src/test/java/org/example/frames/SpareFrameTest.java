@@ -1,5 +1,6 @@
-package org.example;
+package org.example.frames;
 
+import org.example.frames.SpareFrame;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,7 +10,7 @@ class SpareFrameTest {
 
     @Test
     void shouldThrowErrorWhenSumOfThrowsIsNotTen() {
-        assertThrows(IllegalArgumentException.class, () -> new SpareFrame(1,6));
+        assertThrows(IllegalArgumentException.class, () -> new SpareFrame(1, 6));
         assertThrows(IllegalArgumentException.class, () -> new SpareFrame(-1,-5));
         assertThrows(IllegalArgumentException.class, () -> new SpareFrame(5, 6));
     }

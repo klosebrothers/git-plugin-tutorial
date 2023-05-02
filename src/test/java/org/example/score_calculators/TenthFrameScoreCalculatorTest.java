@@ -1,9 +1,9 @@
 package org.example.score_calculators;
 
-import org.example.OpenFrame;
-import org.example.SpareFrame;
-import org.example.StrikeFrame;
-import org.example.TenthFrame;
+import org.example.frames.OpenFrame;
+import org.example.frames.SpareFrame;
+import org.example.frames.StrikeFrame;
+import org.example.frames.TenthFrame;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

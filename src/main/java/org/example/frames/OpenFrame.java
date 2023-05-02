@@ -1,4 +1,4 @@
-package org.example;
+package org.example.frames;
 
 public class OpenFrame extends Frame {
 
@@ -22,5 +22,4 @@ public class OpenFrame extends Frame {
         this.firstThrow = firstThrow;
         this.secondThrow = secondThrow;
     }
-
 }

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.frames;
 
 public class StrikeFrame extends Frame {
     public static final int STATIC_STRIKE_SCORE = 10;

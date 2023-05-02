@@ -1,7 +1,7 @@
 package org.example.score_calculators;
 
-import org.example.Frame;
-import org.example.SpareFrame;
+import org.example.frames.Frame;
+import org.example.frames.SpareFrame;
 
 public class SpareFrameScoreCalculator {
 
