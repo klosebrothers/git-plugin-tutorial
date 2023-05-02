@@ -49,7 +49,7 @@ class SpareFrameScoreCalculatorTest {
 
     @Test
     void shouldReturnScoreWithFollowingBonusFrame() {
-        BonusFrame nextFrame = new BonusFrame(1, 0);
+        TenthFrame nextFrame = new TenthFrame(1, 0);
         SpareFrame spareFrame = new SpareFrame(1, 9);
 
         assertThat(SpareFrameScoreCalculator.calculateScore(spareFrame, nextFrame)).isEqualTo(11);

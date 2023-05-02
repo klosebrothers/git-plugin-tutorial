@@ -33,9 +33,9 @@ class FrameTest {
     @Test
     void shouldBeAbleToBeABonusFrame() {
 
-        Frame frame = new BonusFrame(1, 0);
+        Frame frame = new TenthFrame(1, 0);
 
-        assertThat(frame).isInstanceOf(BonusFrame.class);
+        assertThat(frame).isInstanceOf(TenthFrame.class);
     }
 
     @Test

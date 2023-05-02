@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class BonusFrameTest {
+class TenthFrameTest {
 
     @Test
     void shouldHaveAtLeastOneThrow() {
-        BonusFrame bonusFrame = new BonusFrame(1, 0);
+        TenthFrame tenthFrame = new TenthFrame(1, 0);
 
-        assertThat(bonusFrame.firstThrow).isEqualTo(1);
+        assertThat(tenthFrame.firstThrow).isEqualTo(1);
     }
 }
