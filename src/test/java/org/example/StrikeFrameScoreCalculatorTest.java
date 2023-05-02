@@ -24,8 +24,8 @@ class StrikeFrameScoreCalculatorTest {
     }
 
     @Test
-    void shouldReturnScoreWithScoreOfFollowingBonusFrame() {
-        TenthFrame nextFrame = new TenthFrame(2, 3);
+    void shouldReturnScoreWithScoreOfFollowingTenthFrame() {
+        TenthFrame nextFrame = new TenthFrame(new OpenFrame(2, 3));
         StrikeFrame strikeFrame = new StrikeFrame();
 
         assertThat(calculateScore(strikeFrame, nextFrame)).isEqualTo(15);
@@ -76,8 +76,8 @@ class StrikeFrameScoreCalculatorTest {
     }
 
     @Test
-    void shouldReturnScoreWithScoreOfFollowingStrikeFrameAndFollowingBonusFrame() {
-        TenthFrame secondNextFrame = new TenthFrame(7, 0);
+    void shouldReturnScoreWithScoreOfFollowingStrikeFrameAndFollowingTenthFrame() {
+        TenthFrame secondNextFrame = new TenthFrame(new OpenFrame(7, 0));
         StrikeFrame firstNextFrame = new StrikeFrame();
         StrikeFrame strikeFrame = new StrikeFrame();
 

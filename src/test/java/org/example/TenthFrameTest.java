@@ -7,9 +7,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 class TenthFrameTest {
 
     @Test
-    void shouldHaveAtLeastOneThrow() {
-        TenthFrame tenthFrame = new TenthFrame(1, 0);
+    void shouldHaveThreeThrows() {
+        TenthFrame tenthFrame = new TenthFrame(new EmptyFrame());
 
-        assertThat(tenthFrame.firstThrow).isEqualTo(1);
+        assertThat(tenthFrame.firstThrow).isEqualTo(0);
+        assertThat(tenthFrame.secondThrow).isEqualTo(0);
+        assertThat(tenthFrame.thirdThrow).isEqualTo(0);
     }
 }

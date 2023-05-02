@@ -48,8 +48,8 @@ class SpareFrameScoreCalculatorTest {
     }
 
     @Test
-    void shouldReturnScoreWithFollowingBonusFrame() {
-        TenthFrame nextFrame = new TenthFrame(1, 0);
+    void shouldReturnScoreWithFollowingTenthFrame() {
+        TenthFrame nextFrame = new TenthFrame(new OpenFrame(1,0));
         SpareFrame spareFrame = new SpareFrame(1, 9);
 
         assertThat(SpareFrameScoreCalculator.calculateScore(spareFrame, nextFrame)).isEqualTo(11);
