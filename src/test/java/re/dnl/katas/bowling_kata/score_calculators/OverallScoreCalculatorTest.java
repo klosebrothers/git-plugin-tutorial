@@ -210,6 +210,16 @@ class OverallScoreCalculatorTest {
                                                         ));
     }
 
+    @Test
+    void shouldScoreAnIncompleteGame() {
+        assertOverallScoreOfFramesIsEqualTo(62, List.of(
+                new StrikeFrame(),
+                new StrikeFrame(),
+                new StrikeFrame(),
+                new OpenFrame(0, 1)
+                                                       ));
+    }
+
     private void assertOverallScoreOfFramesIsEqualTo(final int expected, final List<Frame> frames) {
         Game game = new Game();
         game.setFrames(frames);

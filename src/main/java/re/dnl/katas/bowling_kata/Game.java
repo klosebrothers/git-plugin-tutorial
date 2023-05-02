@@ -22,7 +22,7 @@ public class Game {
             throw new IllegalArgumentException("A game can not have less than 1 frame");
         }
 
-        boolean tenthFrameIsNotOfTypeTenthFrame = !(frames.get(frames.size() - 1) instanceof TenthFrame);
+        boolean tenthFrameIsNotOfTypeTenthFrame = (frames.size() == 10 && !(frames.get(9) instanceof TenthFrame));
         if (tenthFrameIsNotOfTypeTenthFrame) {
             throw new IllegalArgumentException("The tenth frame of a game must be of type TenthFrame");
         }
