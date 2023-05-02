@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import re.dnl.katas.bowling_kata.Game;
+import re.dnl.katas.bowling_kata.SingleGame;
 import re.dnl.katas.bowling_kata.frames.EmptyFrame;
 import re.dnl.katas.bowling_kata.frames.Frame;
 import re.dnl.katas.bowling_kata.frames.OpenFrame;
@@ -18,8 +18,8 @@ class OverallScoreCalculatorTest {
 
     @Test
     void shouldScoreATotallyEmptyGame() {
-        Game game = new Game();
-        game.setFrames(List.of(
+        SingleGame singleGame = new SingleGame();
+        singleGame.setFrames(List.of(
                 new EmptyFrame(),
                 new EmptyFrame(),
                 new EmptyFrame(),
@@ -30,10 +30,10 @@ class OverallScoreCalculatorTest {
                 new EmptyFrame(),
                 new EmptyFrame(),
                 new TenthFrame(new EmptyFrame())
-                              ));
+                                    ));
         OverallScoreCalculator overallScoreCalculator = new OverallScoreCalculator();
 
-        int overallScore = overallScoreCalculator.calculateScore(game);
+        int overallScore = overallScoreCalculator.calculateScore(singleGame);
 
         assertThat(overallScore).isZero();
     }
@@ -221,11 +221,11 @@ class OverallScoreCalculatorTest {
     }
 
     private void assertOverallScoreOfFramesIsEqualTo(final int expected, final List<Frame> frames) {
-        Game game = new Game();
-        game.setFrames(frames);
+        SingleGame singleGame = new SingleGame();
+        singleGame.setFrames(frames);
         OverallScoreCalculator overallScoreCalculator = new OverallScoreCalculator();
 
-        int overallScore = overallScoreCalculator.calculateScore(game);
+        int overallScore = overallScoreCalculator.calculateScore(singleGame);
 
         assertThat(overallScore).isEqualTo(expected);
     }

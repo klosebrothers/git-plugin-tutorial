@@ -6,7 +6,7 @@ import java.util.List;
 import re.dnl.katas.bowling_kata.frames.Frame;
 import re.dnl.katas.bowling_kata.frames.TenthFrame;
 
-public class Game {
+public class SingleGame {
 
     private List<Frame> frames = new ArrayList<>();
 

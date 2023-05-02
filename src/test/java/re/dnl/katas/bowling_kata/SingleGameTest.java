@@ -10,17 +10,17 @@ import re.dnl.katas.bowling_kata.frames.Frame;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class GameTest {
+class SingleGameTest {
 
     @Test
     void shouldCreateAGame() {
-        assertThat(new Game()).isNotNull();
+        assertThat(new SingleGame()).isNotNull();
     }
 
     @Test
     void shouldHaveAListOfFrames() {
 
-        List<Frame> frames = new Game().getFrames();
+        List<Frame> frames = new SingleGame().getFrames();
 
         assertThat(frames).isEmpty();
     }
@@ -42,7 +42,7 @@ class GameTest {
                 new EmptyFrame()
                                           );
 
-        assertThrows(IllegalArgumentException.class, () -> new Game().setFrames(elevenFrames));
+        assertThrows(IllegalArgumentException.class, () -> new SingleGame().setFrames(elevenFrames));
     }
 
     @Test
@@ -50,7 +50,7 @@ class GameTest {
 
         List<Frame> noFrames = List.of();
 
-        assertThrows(IllegalArgumentException.class, () -> new Game().setFrames(noFrames));
+        assertThrows(IllegalArgumentException.class, () -> new SingleGame().setFrames(noFrames));
     }
 
     @Test
@@ -69,6 +69,6 @@ class GameTest {
                 new EmptyFrame()
                                                               );
 
-        assertThrows(IllegalArgumentException.class, () -> new Game().setFrames(frameWithLastFrameNotATenthFrame));
+        assertThrows(IllegalArgumentException.class, () -> new SingleGame().setFrames(frameWithLastFrameNotATenthFrame));
     }
 }

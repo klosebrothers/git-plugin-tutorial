@@ -2,13 +2,13 @@ package re.dnl.katas.bowling_kata.score_calculators;
 
 import java.util.List;
 
-import re.dnl.katas.bowling_kata.Game;
+import re.dnl.katas.bowling_kata.SingleGame;
 import re.dnl.katas.bowling_kata.frames.EmptyFrame;
 import re.dnl.katas.bowling_kata.frames.Frame;
 
 public class OverallScoreCalculator {
-    public int calculateScore(final Game game) {
-        List<Frame> frames = game.getFrames();
+    public int calculateScore(final SingleGame singleGame) {
+        List<Frame> frames = singleGame.getFrames();
 
         int overallScore = 0;
 
