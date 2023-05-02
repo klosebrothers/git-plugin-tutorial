@@ -1,10 +1,11 @@
 package re.dnl.katas.bowling_kata.score_calculators;
 
-import re.dnl.katas.bowling_kata.frames.OpenFrame;
+import re.dnl.katas.bowling_kata.frames.Frame;
 
-public class OpenFrameScoreCalculator {
+public class OpenFrameScoreCalculator implements FrameScoreCalculator {
 
-    public static int calculateScore(final OpenFrame frame) {
+    @Override
+    public int calculateScore(final Frame frame, final Frame firstNextFrame, final Frame secondNextFrame) {
         return frame.getFirstThrow() + frame.getSecondThrow();
     }
 }

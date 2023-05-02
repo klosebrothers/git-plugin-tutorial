@@ -1,21 +1,31 @@
 package re.dnl.katas.bowling_kata.score_calculators;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import re.dnl.katas.bowling_kata.frames.EmptyFrame;
 import re.dnl.katas.bowling_kata.frames.OpenFrame;
 import re.dnl.katas.bowling_kata.frames.SpareFrame;
 import re.dnl.katas.bowling_kata.frames.StrikeFrame;
 import re.dnl.katas.bowling_kata.frames.TenthFrame;
-import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TenthFrameScoreCalculatorTest {
+
+    TenthFrameScoreCalculator tenthFrameScoreCalculator;
+
+    @BeforeEach
+    void setUp() {
+        tenthFrameScoreCalculator = new TenthFrameScoreCalculator();
+    }
 
     @Test
     void shouldScoreAnOpenFrame() {
 
         TenthFrame tenthFrame = new TenthFrame(new OpenFrame(1, 1));
 
-        assertThat(TenthFrameScoreCalculator.calculateScore(tenthFrame)).isEqualTo(2);
+        assertThat(tenthFrameScoreCalculator.calculateScore(tenthFrame, new EmptyFrame(), new EmptyFrame())).isEqualTo(2);
     }
 
     @Test
@@ -23,7 +33,8 @@ public class TenthFrameScoreCalculatorTest {
 
         TenthFrame tenthFrame = new TenthFrame(new StrikeFrame(), new OpenFrame(2, 3));
 
-        assertThat(TenthFrameScoreCalculator.calculateScore(tenthFrame)).isEqualTo(15);
+        assertThat(tenthFrameScoreCalculator.calculateScore(tenthFrame, new EmptyFrame(),
+                                                            new EmptyFrame())).isEqualTo(15);
     }
 
     @Test
@@ -31,7 +42,8 @@ public class TenthFrameScoreCalculatorTest {
 
         TenthFrame tenthFrame = new TenthFrame(new StrikeFrame(), new StrikeFrame(), 3);
 
-        assertThat(TenthFrameScoreCalculator.calculateScore(tenthFrame)).isEqualTo(23);
+        assertThat(tenthFrameScoreCalculator.calculateScore(tenthFrame, new EmptyFrame(),
+                                                            new EmptyFrame())).isEqualTo(23);
     }
 
     @Test
@@ -39,7 +51,8 @@ public class TenthFrameScoreCalculatorTest {
 
         TenthFrame tenthFrame = new TenthFrame(new StrikeFrame(), new StrikeFrame(), new StrikeFrame());
 
-        assertThat(TenthFrameScoreCalculator.calculateScore(tenthFrame)).isEqualTo(30);
+        assertThat(tenthFrameScoreCalculator.calculateScore(tenthFrame, new EmptyFrame(),
+                                                            new EmptyFrame())).isEqualTo(30);
     }
 
     @Test
@@ -47,7 +60,8 @@ public class TenthFrameScoreCalculatorTest {
 
         TenthFrame tenthFrame = new TenthFrame(new StrikeFrame(), new SpareFrame(2, 8));
 
-        assertThat(TenthFrameScoreCalculator.calculateScore(tenthFrame)).isEqualTo(20);
+        assertThat(tenthFrameScoreCalculator.calculateScore(tenthFrame, new EmptyFrame(),
+                                                            new EmptyFrame())).isEqualTo(20);
     }
 
     @Test
@@ -55,7 +69,8 @@ public class TenthFrameScoreCalculatorTest {
 
         TenthFrame tenthFrame = new TenthFrame(new SpareFrame(1, 9), 3);
 
-        assertThat(TenthFrameScoreCalculator.calculateScore(tenthFrame)).isEqualTo(13);
+        assertThat(tenthFrameScoreCalculator.calculateScore(tenthFrame, new EmptyFrame(),
+                                                            new EmptyFrame())).isEqualTo(13);
     }
 
     @Test
@@ -63,6 +78,7 @@ public class TenthFrameScoreCalculatorTest {
 
         TenthFrame tenthFrame = new TenthFrame(new SpareFrame(1, 9), new StrikeFrame());
 
-        assertThat(TenthFrameScoreCalculator.calculateScore(tenthFrame)).isEqualTo(20);
+        assertThat(tenthFrameScoreCalculator.calculateScore(tenthFrame, new EmptyFrame(),
+                                                            new EmptyFrame())).isEqualTo(20);
     }
 }

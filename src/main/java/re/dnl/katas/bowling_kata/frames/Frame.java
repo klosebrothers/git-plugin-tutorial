@@ -1,5 +1,7 @@
 package re.dnl.katas.bowling_kata.frames;
 
+import re.dnl.katas.bowling_kata.score_calculators.FrameScoreCalculator;
+
 public abstract class Frame {
     int firstThrow;
     int secondThrow;
@@ -11,4 +13,6 @@ public abstract class Frame {
     public int getSecondThrow() {
         return secondThrow;
     }
+
+    public abstract FrameScoreCalculator getFrameCalculator();
 }

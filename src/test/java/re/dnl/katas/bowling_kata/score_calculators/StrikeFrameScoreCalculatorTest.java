@@ -1,23 +1,30 @@
 package re.dnl.katas.bowling_kata.score_calculators;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import re.dnl.katas.bowling_kata.frames.EmptyFrame;
 import re.dnl.katas.bowling_kata.frames.OpenFrame;
 import re.dnl.katas.bowling_kata.frames.SpareFrame;
 import re.dnl.katas.bowling_kata.frames.StrikeFrame;
 import re.dnl.katas.bowling_kata.frames.TenthFrame;
-import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static re.dnl.katas.bowling_kata.score_calculators.StrikeFrameScoreCalculator.calculateScore;
 
 class StrikeFrameScoreCalculatorTest {
+    StrikeFrameScoreCalculator strikeFrameScoreCalculator;
+
+    @BeforeEach
+    void setUp() {
+        strikeFrameScoreCalculator = new StrikeFrameScoreCalculator();
+    }
 
     @Test
     void shouldReturnScoreWithScoreOfFollowingOpenFrame() {
         OpenFrame nextFrame = new OpenFrame(3, 4);
         StrikeFrame strikeFrame = new StrikeFrame();
 
-        assertThat(calculateScore(strikeFrame, nextFrame, new EmptyFrame())).isEqualTo(17);
+        assertThat(strikeFrameScoreCalculator.calculateScore(strikeFrame, nextFrame, new EmptyFrame())).isEqualTo(17);
     }
 
     @Test
@@ -25,7 +32,7 @@ class StrikeFrameScoreCalculatorTest {
         SpareFrame nextFrame = new SpareFrame(2, 8);
         StrikeFrame strikeFrame = new StrikeFrame();
 
-        assertThat(calculateScore(strikeFrame, nextFrame, new EmptyFrame())).isEqualTo(20);
+        assertThat(strikeFrameScoreCalculator.calculateScore(strikeFrame, nextFrame, new EmptyFrame())).isEqualTo(20);
     }
 
     @Test
@@ -33,7 +40,7 @@ class StrikeFrameScoreCalculatorTest {
         TenthFrame nextFrame = new TenthFrame(new OpenFrame(2, 3));
         StrikeFrame strikeFrame = new StrikeFrame();
 
-        assertThat(calculateScore(strikeFrame, nextFrame, new EmptyFrame())).isEqualTo(15);
+        assertThat(strikeFrameScoreCalculator.calculateScore(strikeFrame, nextFrame, new EmptyFrame())).isEqualTo(15);
     }
 
     @Test
@@ -41,7 +48,7 @@ class StrikeFrameScoreCalculatorTest {
         EmptyFrame nextFrame = new EmptyFrame();
         StrikeFrame strikeFrame = new StrikeFrame();
 
-        assertThat(calculateScore(strikeFrame, nextFrame, new EmptyFrame())).isEqualTo(10);
+        assertThat(strikeFrameScoreCalculator.calculateScore(strikeFrame, nextFrame, new EmptyFrame())).isEqualTo(10);
     }
 
     @Test
@@ -50,7 +57,7 @@ class StrikeFrameScoreCalculatorTest {
         StrikeFrame firstNextFrame = new StrikeFrame();
         StrikeFrame strikeFrame = new StrikeFrame();
 
-        assertThat(calculateScore(strikeFrame, firstNextFrame, secondNextFrame)).isEqualTo(22);
+        assertThat(strikeFrameScoreCalculator.calculateScore(strikeFrame, firstNextFrame, secondNextFrame)).isEqualTo(22);
     }
 
     @Test
@@ -59,7 +66,7 @@ class StrikeFrameScoreCalculatorTest {
         StrikeFrame firstNextFrame = new StrikeFrame();
         StrikeFrame strikeFrame = new StrikeFrame();
 
-        assertThat(calculateScore(strikeFrame, firstNextFrame, secondNextFrame)).isEqualTo(20);
+        assertThat(strikeFrameScoreCalculator.calculateScore(strikeFrame, firstNextFrame, secondNextFrame)).isEqualTo(20);
     }
 
     @Test
@@ -68,7 +75,7 @@ class StrikeFrameScoreCalculatorTest {
         StrikeFrame firstNextFrame = new StrikeFrame();
         StrikeFrame strikeFrame = new StrikeFrame();
 
-        assertThat(calculateScore(strikeFrame, firstNextFrame, secondNextFrame)).isEqualTo(21);
+        assertThat(strikeFrameScoreCalculator.calculateScore(strikeFrame, firstNextFrame, secondNextFrame)).isEqualTo(21);
     }
 
     @Test
@@ -77,7 +84,7 @@ class StrikeFrameScoreCalculatorTest {
         StrikeFrame firstNextFrame = new StrikeFrame();
         StrikeFrame strikeFrame = new StrikeFrame();
 
-        assertThat(calculateScore(strikeFrame, firstNextFrame, secondNextFrame)).isEqualTo(30);
+        assertThat(strikeFrameScoreCalculator.calculateScore(strikeFrame, firstNextFrame, secondNextFrame)).isEqualTo(30);
     }
 
     @Test
@@ -86,6 +93,6 @@ class StrikeFrameScoreCalculatorTest {
         StrikeFrame firstNextFrame = new StrikeFrame();
         StrikeFrame strikeFrame = new StrikeFrame();
 
-        assertThat(calculateScore(strikeFrame, firstNextFrame, secondNextFrame)).isEqualTo(27);
+        assertThat(strikeFrameScoreCalculator.calculateScore(strikeFrame, firstNextFrame, secondNextFrame)).isEqualTo(27);
     }
 }

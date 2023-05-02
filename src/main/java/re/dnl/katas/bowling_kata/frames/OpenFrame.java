@@ -1,5 +1,8 @@
 package re.dnl.katas.bowling_kata.frames;
 
+import re.dnl.katas.bowling_kata.score_calculators.FrameScoreCalculator;
+import re.dnl.katas.bowling_kata.score_calculators.OpenFrameScoreCalculator;
+
 public class OpenFrame extends Frame {
 
     public OpenFrame(final int firstThrow, final int secondThrow) {
@@ -21,5 +24,10 @@ public class OpenFrame extends Frame {
 
         this.firstThrow = firstThrow;
         this.secondThrow = secondThrow;
+    }
+
+    @Override
+    public FrameScoreCalculator getFrameCalculator() {
+        return new OpenFrameScoreCalculator();
     }
 }

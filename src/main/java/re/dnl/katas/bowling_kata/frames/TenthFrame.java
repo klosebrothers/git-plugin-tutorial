@@ -1,5 +1,8 @@
 package re.dnl.katas.bowling_kata.frames;
 
+import re.dnl.katas.bowling_kata.score_calculators.FrameScoreCalculator;
+import re.dnl.katas.bowling_kata.score_calculators.TenthFrameScoreCalculator;
+
 public class TenthFrame extends Frame {
 
     public final int thirdThrow;
@@ -55,5 +58,10 @@ public class TenthFrame extends Frame {
         this.firstThrow = strikeFrame.getFirstThrow();
         this.secondThrow = spareFrame.getFirstThrow();
         this.thirdThrow = spareFrame.getSecondThrow();
+    }
+
+    @Override
+    public FrameScoreCalculator getFrameCalculator() {
+        return new TenthFrameScoreCalculator();
     }
 }
